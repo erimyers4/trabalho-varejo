@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VarejoIA — Inteligência para o supermercado</title>
+<style>
+:root{--bg:#07110d;--panel:#0d1d16;--panel2:#12271e;--text:#effff6;--muted:#9eb4a8;--green:#53e08a;--lime:#b8f56a;--red:#ff7b7b;--yellow:#ffd166;--line:#214132}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 80% -10%,#17462d 0,transparent 35%),var(--bg);color:var(--text)}
+button{font:inherit}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #173126}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}.logo-mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--green),var(--lime));color:#082012;display:grid;place-items:center}
+.navlinks{display:flex;gap:25px;color:var(--muted);font-size:14px}.navlinks a{color:inherit;text-decoration:none}.btn{border:0;border-radius:12px;padding:11px 17px;font-weight:750;cursor:pointer}.primary{background:var(--green);color:#082012}.ghost{background:#12261d;color:var(--text);border:1px solid var(--line)}
+.hero{padding:72px 0 42px;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}.eyebrow{color:var(--green);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px}.hero h1{font-size:clamp(42px,6vw,72px);line-height:.98;margin:16px 0 22px;letter-spacing:-3px}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);font-size:18px;line-height:1.65;max-width:650px}.actions{display:flex;gap:12px;margin-top:28px}.dashboard{background:linear-gradient(145deg,#10241a,#09150f);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 25px 70px #0008}.dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.status{font-size:12px;color:var(--green);background:#123a27;padding:7px 10px;border-radius:99px}.metric{background:#0b1913;border:1px solid #19362a;border-radius:15px;padding:16px;margin:10px 0}.metric small{color:var(--muted)}.metric strong{display:block;font-size:28px;margin-top:5px}.bars{height:105px;display:flex;align-items:end;gap:8px;margin-top:12px}.bar{flex:1;border-radius:5px 5px 2px 2px;background:linear-gradient(var(--green),#1d7b4a);opacity:.9}.section{padding:70px 0}.section h2{font-size:38px;margin:8px 0 12px;letter-spacing:-1px}.sub{color:var(--muted);max-width:680px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.card{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:20px}.icon{font-size:28px}.card h3{margin:14px 0 8px}.card p{color:var(--muted);line-height:1.55;margin:0}.demo{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.tabs{display:flex;gap:8px;margin-bottom:18px}.tab{padding:9px 13px;border-radius:10px;background:#10251b;color:var(--muted);border:1px solid var(--line);cursor:pointer}.tab.active{background:var(--green);color:#082012;border-color:var(--green);font-weight:800}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:15px 10px;border-bottom:1px solid #1c382b;font-size:14px}.table th{color:var(--muted);font-weight:600}.pill{padding:6px 9px;border-radius:99px;font-size:12px;font-weight:750}.danger{background:#3a1919;color:var(--red)}.ok{background:#123722;color:var(--green)}.warn{background:#3a3017;color:var(--yellow)}.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:25px}.impact .card strong{font-size:31px;color:var(--green)}.impact .card{padding:20px}.cta{margin:55px 0 70px;padding:42px;border-radius:25px;background:linear-gradient(120deg,#153e29,#0d2419);border:1px solid #2b6246;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{margin:0 0 8px}.cta p{margin:0;color:#b5cfc0}footer{border-top:1px solid #173126;padding:25px 0;color:#789083;font-size:13px;display:flex;justify-content:space-between}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:45px}.cards{grid-template-columns:1fr}.impact{grid-template-columns:1fr 1fr}.navlinks{display:none}.cta{display:block}.cta .btn{margin-top:20px;width:100%}.table{min-width:650px}.demo{overflow:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <div class="logo"><div class="logo-mark">✦</div> VarejoIA</div>
+  <div class="navlinks"><a href="#problema">Problema</a><a href="#solucao">Solução</a><a href="#demo">Demo</a><a href="#impacto">Impacto</a></div>
+  <button class="btn primary" onclick="document.querySelector('#demo').scrollIntoView({behavior:'smooth'})">Ver protótipo</button>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">ExpoAgas · Prova de conceito</div>
+    <h1>Menos ruptura.<br><span>Mais vendas.</span></h1>
+    <p>Uma central de inteligência que usa IA para prever a demanda, identificar produtos em risco de ruptura e recomendar ações para o supermercado antes que o problema apareça na gôndola.</p>
+    <div class="actions"><button class="btn primary" onclick="document.querySelector('#demo').scrollIntoView({behavior:'smooth'})">Testar a solução →</button><button class="btn ghost" onclick="alert('Protótipo: dados simulados para demonstração na ExpoAgas.')">Como funciona?</button></div>
+  </div>
+  <div class="dashboard">
+    <div class="dash-head"><strong>Visão geral · Hoje</strong><span class="status">● IA ativa</span></div>
+    <div class="metric"><small>Risco de ruptura</small><strong>7 produtos</strong></div>
+    <div class="metric"><small>Vendas protegidas</small><strong>R$ 18.420</strong></div>
+    <small style="color:#9eb4a8">Previsão de demanda — próximos 7 dias</small>
+    <div class="bars">
+      <div class="bar" style="height:45%"></div><div class="bar" style="height:62%"></div><div class="bar" style="height:52%"></div><div class="bar" style="height:78%"></div><div class="bar" style="height:68%"></div><div class="bar" style="height:92%"></div><div class="bar" style="height:80%"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="problema">
+  <div class="eyebrow">O problema</div><h2>A ruptura custa caro.</h2>
+  <p class="sub">Quando um produto está indisponível, o supermercado perde venda, o cliente pode trocar de loja e a equipe trabalha de forma reativa.</p>
+  <div class="cards">
+    <div class="card"><div class="icon">📉</div><h3>Venda perdida</h3><p>Produtos fora da gôndola significam faturamento que não volta.</p></div>
+    <div class="card"><div class="icon">🛒</div><h3>Cliente frustrado</h3><p>A experiência ruim aumenta o risco de migração para a concorrência.</p></div>
+    <div class="card"><div class="icon">⏱️</div><h3>Decisão tardia</h3><p>Sem previsão, o time descobre o problema quando já é tarde para agir.</p></div>
+  </div>
+</section>
+
+<section class="section" id="solucao">
+  <div class="eyebrow">A solução</div><h2>IA que transforma dados em ação.</h2>
+  <p class="sub">O VarejoIA cruza histórico de vendas, estoque, sazonalidade e sinais de demanda para priorizar o que merece atenção.</p>
+  <div class="cards">
+    <div class="card"><div class="icon">🧠</div><h3>Previsão inteligente</h3><p>Estima a demanda dos próximos dias e destaca desvios relevantes.</p></div>
+    <div class="card"><div class="icon">🚨</div><h3>Alertas priorizados</h3><p>Classifica o risco por impacto para a equipe agir primeiro no que importa.</p></div>
+    <div class="card"><div class="icon">⚡</div><h3>Recomendação</h3><p>Sugere reposição e quantidade para reduzir ruptura sem criar excesso de estoque.</p></div>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <div class="eyebrow">Protótipo interativo</div><h2>Central de oportunidades</h2>
+  <p class="sub">Clique nos filtros para simular a rotina do gestor de loja.</p>
+  <div class="demo">
+    <div class="tabs"><button class="tab active" onclick="filter('todos',this)">Todos</button><button class="tab" onclick="filter('alto',this)">Risco alto</button><button class="tab" onclick="filter('ok',this)">Estáveis</button></div>
+    <table class="table"><thead><tr><th>Produto</th><th>Estoque</th><th>Demanda 7d</th><th>Risco</th><th>Ação sugerida</th></tr></thead>
+    <tbody id="rows">
+      <tr data-risk="alto"><td><strong>Leite Integral 1L</strong></td><td>18 un.</td><td>74 un.</td><td><span class="pill danger">Alto</span></td><td>Repor 80 un.</td></tr>
+      <tr data-risk="alto"><td><strong>Café 500g</strong></td><td>11 un.</td><td>49 un.</td><td><span class="pill danger">Alto</span></td><td>Repor 55 un.</td></tr>
+      <tr data-risk="ok"><td><strong>Arroz 5kg</strong></td><td>92 un.</td><td>66 un.</td><td><span class="pill ok">Estável</span></td><td>Manter nível</td></tr>
+      <tr data-risk="ok"><td><strong>Detergente 500ml</strong></td><td>61 un.</td><td>44 un.</td><td><span class="pill ok">Estável</span></td><td>Manter nível</td></tr>
+      <tr data-risk="alto"><td><strong>Refrigerante 2L</strong></td><td>23 un.</td><td>88 un.</td><td><span class="pill warn">Atenção</span></td><td>Repor 70 un.</td></tr>
+    </tbody></table>
+  </div>
+</section>
+
+<section class="section" id="impacto">
+  <div class="eyebrow">Impacto estimado</div><h2>Indicadores que o varejo entende.</h2>
+  <div class="impact">
+    <div class="card"><small>Rupturas</small><strong>-22%</strong><p>menos ocorrências</p></div>
+    <div class="card"><small>Venda protegida</small><strong>+8%</strong><p>potencial estimado</p></div>
+    <div class="card"><small>Tempo da equipe</small><strong>-30%</strong><p>menos análise manual</p></div>
+    <div class="card"><small>Precisão</small><strong>92%</strong><p>na previsão simulada</p></div>
+  </div>
+</section>
+
+<div class="cta">
+  <div><h2>Do dado à decisão em segundos.</h2><p>Uma solução simples de demonstrar, escalável para diferentes lojas e categorias.</p></div>
+  <button class="btn primary" onclick="alert('Demo iniciada! Em uma versão real, os dados viriam do ERP/PDV e do estoque da loja.')">Iniciar demonstração</button>
+</div>
+
+<footer><span>VarejoIA · ExpoAgas</span><span>Protótipo conceitual · Dados simulados</span></footer>
+</div>
+<script>
+function filter(type,btn){
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
+ document.querySelectorAll('#rows tr').forEach(r=>r.style.display=(type==='todos'||r.dataset.risk===type)?'':'none');
+}
+</script>
+</body>
+</html>
